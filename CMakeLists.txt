@@ -9,7 +9,7 @@ find_package(gflags REQUIRED)
 find_package(Threads REQUIRED)
 find_package(OpenCL REQUIRED)
 find_package(TinyXML REQUIRED)
-find_package(XRT REQUIRED)
+# find_package(XRT REQUIRED)
 
 file(
   DOWNLOAD
@@ -36,8 +36,8 @@ set(frt_sources
     src/frt/intel_opencl_device.cpp
     src/frt/opencl_device.cpp
     src/frt/tapa_fast_cosim_device.cpp
-    src/frt/xilinx_opencl_device.cpp
-    src/frt/xilinx_opencl_stream.cpp
+    # src/frt/xilinx_opencl_device.cpp
+    # src/frt/xilinx_opencl_stream.cpp
 )
 set(frt_compile_features
     cxx_std_17
@@ -158,7 +158,7 @@ string(
   "libgflags2.2"
   "libgoogle-glog0v5"
   "libtinyxml-dev"
-  "opencl-dev"
+  "opencl-dev | libopencl1"
   "opencl-headers"
   "tar"
   "zstd"
@@ -190,6 +190,6 @@ set(CPACK_GENERATOR
 )
 include(CPack)
 
-enable_testing()
-add_subdirectory(tests/hbm)
-add_subdirectory(tests/xdma)
+# enable_testing()
+# add_subdirectory(tests/hbm)
+# add_subdirectory(tests/xdma)
